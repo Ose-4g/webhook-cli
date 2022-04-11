@@ -1,7 +1,9 @@
 {
   "name": "@ose4g/webhook-cli",
   "bin": {
-    "webhook-cli": "./index.js",
+    "webhook-cli": "./index.js"
+  },
+  "scripts": {
     "prepublish": "npm run format",
     "format": "prettier --write .",
     "preversion": "npm run format",
