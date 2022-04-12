@@ -5,6 +5,17 @@ const URL = require('url').URL;
 const { REMOTE_URL } = require('./constants');
 const { authenticate } = require('./authenticate');
 
+/**
+ * - authenticates user using code and password
+ * - receives requests from the remote webhook via socket.io
+ * - forwards those requests to the localhost server.
+ *
+ * @param {*} pass : password the user entered
+ * @param {*} url : url of the remote webhook
+ * @param {*} port : port which we're forwarding the request to on localhost
+ * @param {*} path : path to which we're forwarding the request to on the localhost port
+ * @returns :
+ */
 const connect = async (pass, url, port, path) => {
   const parsedUrl = new URL(url);
   const [, code] = parsedUrl.pathname.split('/');

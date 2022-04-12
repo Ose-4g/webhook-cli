@@ -2,6 +2,12 @@ const axios = require('axios');
 const chalk = require('chalk');
 const { REMOTE_URL } = require('./constants');
 
+/**
+ * authenticates a user
+ * @param {*} code : unique code in the webhook url
+ * @param {*} password : user's password
+ * @returns
+ */
 exports.authenticate = async (code, password) => {
   try {
     await axios.post(`${REMOTE_URL}/api/v1/authenticate`, { code, password });
