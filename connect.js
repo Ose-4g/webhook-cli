@@ -3,12 +3,19 @@ const chalk = require('chalk');
 const forwardRequest = require('./forwardRequest');
 const URL = require('url').URL;
 const { REMOTE_URL } = require('./constants');
+const { authenticate } = require('./authenticate');
 
-const connect = async (url, port, path) => {
-  const socket = io(REMOTE_URL);
+const connect = async (pass, url, port, path) => {
   const parsedUrl = new URL(url);
   const [, code] = parsedUrl.pathname.split('/');
-  console.log('code = ', code);
+
+  const authenticated = await authenticate(code, pass);
+
+  if (!authenticated) {
+    console.log(chalk.red('Unable to authenticate you'));
+    return;
+  }
+  const socket = io(REMOTE_URL);
   socket.on('connect', () => {
     process.stdout.write('connected to ');
     console.log(chalk.blue.bold(`${REMOTE_URL}`));
