@@ -3,7 +3,6 @@
 ![npm (scoped)](https://img.shields.io/npm/v/@ose4g/webhook-cli)
 ![npm](https://img.shields.io/npm/dw/@ose4g/webhook-cli)
 ![npms.io (final)](https://img.shields.io/npms-io/maintenance-score/@ose4g/webhook-cli)
-![npms.io (final)](https://img.shields.io/npms-io/quality-score/@ose4g/webhook-cli)
 ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@ose4g/cron-manager)
 
 One issue backend developers is testing webhooks locally.
