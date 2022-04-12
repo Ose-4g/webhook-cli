@@ -4,6 +4,7 @@ const { REMOTE_URL } = require('./constants');
 
 const getRemoteUrl = async (email) => {
   try {
+    console.log('fetching your remote url.......');
     const { data } = await axios.get(`${REMOTE_URL}/api/v1/get-url?email=${email}`);
 
     process.stdout.write('Your remote webhook is located at ');

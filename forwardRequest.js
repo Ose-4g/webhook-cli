@@ -11,7 +11,7 @@ const forwardRequest = async ({ method, headers, query, body }, localurl) => {
       query,
     });
   } catch (error) {
-    console.log(chalk.red("An error occured. Ensure you're connected to the internet"));
+    console.log(chalk.red('An error occured. Ensure the server is running on the port you speicified'));
   }
 };
 
