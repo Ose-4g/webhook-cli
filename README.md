@@ -20,10 +20,14 @@ npm install -g @ose4g/webhook-cli
 ## Usage
 
 - To get the remote url you'll be using run the following command.
+
   ```bash
-  webhook-cli get myemail
+  webhook-cli get password
   ```
-  - replace **myemail** with your email (or any unique string actually)
+
+  - replace **password** with your password.
+  - make sure to note down your password as you'll need it to connect to that particular url again.
+
 - It then logs the remote url you'll be using for testing. The urls are usually in the pattern `http://ose4g-webhook.herokuapp.com/<unique-code>/webhook`
 
 - In your application(e.g github apps or stripe) set this url as your webhook.
@@ -31,13 +35,13 @@ npm install -g @ose4g/webhook-cli
 - Once that is done run the following command in your terminal
 
 ```bash
-webhook-cli connect --url <remote-url> --port <port> --path <path>
+webhook-cli connect --pass <password> --url <remote-url> --port <port> --path <path>
 ```
 
 e.g
 
 ```bash
-webhook-cli connect --url http://ose4g-webhook.herokuapp.com/<unique-code>/webhook --port 3000 --path /api/v1/webhook
+webhook-cli connect --pass password --url http://ose4g-webhook.herokuapp.com/<unique-code>/webhook --port 3000 --path /api/v1/webhook
 ```
 
 - This makes a connection from the remote url to the specified server and proxies the request to the local server.
