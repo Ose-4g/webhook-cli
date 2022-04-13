@@ -16,9 +16,9 @@ const forwardRequest = async ({ method, headers, query, body }, localurl) => {
     await axios({
       method,
       url: localurl,
-      body,
+      data: body,
+      params: { ...query },
       headers,
-      query,
     });
   } catch (error) {
     console.log(chalk.red('An error occured. Ensure the server is running on the port you speicified'));
