@@ -13,14 +13,14 @@ const chalk = require('chalk');
  */
 const forwardRequest = async ({ method, headers, query, body }, localurl) => {
   try {
-    await axios({
+    const response = await axios({
       method,
       url: localurl,
       data: body,
       params: { ...query },
-      headers,
     });
   } catch (error) {
+    console.log(error);
     console.log(chalk.red('An error occured. Ensure the server is running on the port you speicified'));
   }
 };

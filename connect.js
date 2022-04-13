@@ -42,7 +42,7 @@ const connect = async (pass, url, port, path) => {
   socket.on(code, (data) => {
     const { method, headers, query, body, originalUrl } = data;
     forwardRequest({ method, headers, query, body }, localurl);
-    console.log(`${method} ${localurl}${originalUrl}`);
+    console.log(`url = ${method} ${localurl}`, `query = ${JSON.stringify(query)}`, `body = ${JSON.stringify(body)}`);
   });
 };
 
