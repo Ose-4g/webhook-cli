@@ -17,6 +17,7 @@ const forwardRequest = async ({ method, headers, query, body }, localurl) => {
       method,
       url: localurl,
       data: body,
+      headers,
       params: { ...query },
     });
   } catch (error) {
